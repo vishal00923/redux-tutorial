@@ -1,4 +1,8 @@
-import { createStore, applyMiddleware, combineReducers } from 'redux';
+import {
+  legacy_createStore as createStore,
+  applyMiddleware,
+  combineReducers,
+} from 'redux';
 
 import logger from 'redux-logger';
 import thunk from 'redux-thunk';
@@ -25,8 +29,7 @@ const store = createStore(
 
 const history = [];
 
-//reducer
-
+//reducers
 function accountReducer(state = { amount: 1 }, action) {
   switch (action.type) {
     case getAccUserFulFilled:
